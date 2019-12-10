@@ -2,36 +2,49 @@
   <div>
     <h1>Movie Review</h1>
     <form @submit.prevent="submit">
-      <label for="movie-input">Title of the movie</label>
-      <input id="movie-input" v-model="title" name="title" />
+      <div>
+        <label for="movie-input">Title of the movie</label>
+        <input id="movie-input" v-model="title" name="title" />
+      </div>
 
-      <label id="review-textarea">Your review</label>
-      <textarea
-        v-model="review"
-        name="review-textarea"
-        placeholder="Write an awesome review"
-        aria-labelledby="review-textarea"
-      />
+      <div>
+        <label for="review-textarea">Your review</label>
+        <textarea
+          v-model="review"
+          id="review-textarea"
+          name="review-textarea"
+          placeholder="Write an awesome review"
+          aria-labelledby="review-textarea"
+        />
+      </div>
 
-      <label>
-        <input v-model="rating" type="radio" value="3" />
-        Wonderful
-      </label>
-      <label>
-        <input v-model="rating" type="radio" value="2" />
-        Average
-      </label>
-      <label>
-        <input v-model="rating" type="radio" value="1" />
-        Awful
-      </label>
+      <div>
+        <label>
+          <input v-model="rating" type="radio" value="3" />
+          Wonderful
+        </label>
+        <label>
+          <input v-model="rating" type="radio" value="2" />
+          Average
+        </label>
+        <label>
+          <input v-model="rating" type="radio" value="1" />
+          Awful
+        </label>
+      </div>
 
-      <label id="recommend-label">Would you recommend this movie?</label>
-      <input id="recommend" v-model="recommend" type="checkbox" name="recommend" />
+      <div>
+        <label for="recommend-label">Would you recommend this movie?</label>
+        <input id="recommend-label" v-model="recommend" type="checkbox" name="recommend" />
+      </div>
 
-      <button :disabled="submitDisabled" type="submit">
-        Submit
-      </button>
+      <div>
+        <button :disabled="submitDisabled" type="submit">
+          Submit
+        </button>
+      </div>
+
+      <div>{{ successText }}</div>
     </form>
   </div>
 </template>
@@ -40,6 +53,7 @@
 export default {
   data() {
     return {
+      successText: '',
       title: '',
       review: '',
       rating: '1',
@@ -60,6 +74,7 @@ export default {
         rating: this.rating,
         recommend: this.recommend,
       })
+      this.successText = 'Done'
     },
   },
 }

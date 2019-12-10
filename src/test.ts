@@ -5,10 +5,11 @@ import {VueClass} from '@vue/test-utils'
 import {render as tlvRender, RenderOptions, ConfigurationCallback} from '@testing-library/vue'
 import {Store} from 'vuex'
 import Router from 'vue-router'
+import {axe} from 'jest-axe'
 import {storeObj} from '@/store'
 import {routes} from '@/router'
 
-export {user}
+export {user, axe}
 export * from '@testing-library/vue'
 export function render<V extends Vue>(
   component: any,

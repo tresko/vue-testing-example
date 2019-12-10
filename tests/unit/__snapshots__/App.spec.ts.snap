@@ -308,6 +308,103 @@ exports[`full app rendering/navigating 2`] = `
       <h1>
         This is an about page
       </h1>
+       
+      <div>
+        <h1>
+          Movie Review
+        </h1>
+         
+        <form>
+          <div>
+            <label
+              for="movie-input"
+            >
+              Title of the movie
+            </label>
+             
+            <input
+              id="movie-input"
+              name="title"
+            />
+          </div>
+           
+          <div>
+            <label
+              for="review-textarea"
+            >
+              Your review
+            </label>
+             
+            <textarea
+              aria-labelledby="review-textarea"
+              id="review-textarea"
+              name="review-textarea"
+              placeholder="Write an awesome review"
+            />
+          </div>
+           
+          <div>
+            <label>
+              <input
+                type="radio"
+                value="3"
+              />
+              
+        Wonderful
+      
+            </label>
+             
+            <label>
+              <input
+                type="radio"
+                value="2"
+              />
+              
+        Average
+      
+            </label>
+             
+            <label>
+              <input
+                type="radio"
+                value="1"
+              />
+              
+        Awful
+      
+            </label>
+          </div>
+           
+          <div>
+            <label
+              for="recommend-label"
+            >
+              Would you recommend this movie?
+            </label>
+             
+            <input
+              id="recommend-label"
+              name="recommend"
+              type="checkbox"
+            />
+          </div>
+           
+          <div>
+            <button
+              disabled="disabled"
+              type="submit"
+            >
+              
+        Submit
+      
+            </button>
+          </div>
+           
+          <div>
+            
+          </div>
+        </form>
+      </div>
     </div>
      
     <div

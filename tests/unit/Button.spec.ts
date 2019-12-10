@@ -1,13 +1,13 @@
-import {render, fireEvent, user} from '@/test'
+import {render, fireEvent, user, axe} from '@/test'
 import Button from '@/components/Button.vue'
 
 test('renders button with default text', async () => {
-  expect.assertions(2)
+  expect.assertions(3)
   const text = 'Button Text'
   const newText = 'New Button Text'
 
   // Set the prop value by using the second argument of `render()`.
-  const {getByRole, updateProps} = render(Button)
+  const {getByRole, updateProps, container, getByText} = render(Button)
 
   // Get the only element with a 'button' role.
   const button = getByRole('button')
@@ -17,6 +17,10 @@ test('renders button with default text', async () => {
   await updateProps({text: newText})
 
   expect(button).toHaveTextContent(newText)
+
+  // Accessibility
+  const results = await axe(container)
+  expect(results).toHaveNoViolations()
 })
 
 test('renders button with text', () => {
