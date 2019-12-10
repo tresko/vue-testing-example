@@ -30,5 +30,9 @@ yarn test:e2e
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![ROI](./docs/roi.png)
+
+![trophy](./docs/trophy.jpg)
+
+### Articles
+[The Testing Garden of Kent C. Dodds](https://kentcdodds.com/testing/)
